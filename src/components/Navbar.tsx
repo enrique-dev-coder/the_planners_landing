@@ -27,6 +27,7 @@ const navLinks = [
     title: "Trabajo",
   },
 ];
+
 const variants = {
   open: { opacity: 1, height: 160, width: 120 },
   closed: { opacity: 0, x: "100%" },

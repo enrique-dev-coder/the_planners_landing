@@ -15,3 +15,21 @@ export const SmileIcon = ({ className }: { className?: string }) => {
     </svg>
   );
 };
+
+export const ArrowIcon = ({ className }: { className?: string }) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="69"
+      height="69"
+      viewBox="0 0 69 69"
+      fill="none"
+      className={`${className}`}
+    >
+      <path
+        d="M52.2387 37.375L44.8212 44.8212L48.875 48.875L63.25 34.5L48.875 20.125L44.8212 24.1787L52.2387 31.625H5.74997V37.375H52.2387Z"
+        fill="white"
+      />
+    </svg>
+  );
+};

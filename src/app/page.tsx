@@ -1,9 +1,11 @@
 import Image from "next/image";
 import Carita from "../../public/img/carita.svg";
 import Right from "../../public/img/right.svg";
+import Lalo1 from "../../public/img/Lalo_1.svg";
 import MainLayout from "@/components/wrappers/MainLayout";
 import SVgClipPath from "@/components/SVgClipPath";
-import { SmileIcon } from "@/components/Icons";
+import { SmileIcon, ArrowIcon } from "@/components/Icons";
+import Counter from "@/components/Counter";
 
 export default function Home() {
   return (
@@ -66,7 +68,38 @@ export default function Home() {
           </h2>
         </div>
         {/*info*/}
-        <div className="col-span-4 my-[54px]"></div>
+        <div className="col-span-4 my-[54px] flex flex-col justify-between">
+          {/*images */}
+          <div className="flex relative">
+            <div className="z-1 relative">
+              <Image
+                src={Lalo1}
+                alt="Eduardo Urzua"
+                className="relative  z-10"
+              />
+            </div>
+            <div className="w-[80px] h-[80px] relative z-0 flex items-center justify-center border border-bright-yellow rounded-full  -ml-5">
+              <ArrowIcon />
+            </div>
+          </div>
+          {/*text*/}
+          <div className=" mt-8">
+            <p className=" text-dark-main-text  text-2xl leading-8">
+              <span className=" uppercase text-bright-yellow">
+                The planners
+              </span>{" "}
+              es una agencia creativa encargada de brindarte una experiencia
+              memorable, innovadora, vibrante y única.
+            </p>
+          </div>
+          {/*Animated numbers*/}
+          <div>
+            <Counter number={50} title="Clientes satisfechos" />
+          </div>
+          <div>
+            <Counter number={100} title="Eventos Realizados" />
+          </div>
+        </div>
         {/*image*/}
         <div className="col-span-8 my-[54px] relative">
           <SVgClipPath />
