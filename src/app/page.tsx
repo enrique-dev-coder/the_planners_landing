@@ -2,6 +2,8 @@ import Image from "next/image";
 import Carita from "../../public/img/carita.svg";
 import Right from "../../public/img/right.svg";
 import MainLayout from "@/components/wrappers/MainLayout";
+import SVgClipPath from "@/components/SVgClipPath";
+import { SmileIcon } from "@/components/Icons";
 
 export default function Home() {
   return (
@@ -49,6 +51,36 @@ export default function Home() {
           <Image src={Right} alt="ver mas" className=" animate-newBounceAnim" />
         </div>
       </div>
+      {/*About us*/}
+      <section className="grid grid-cols-12">
+        <div className="col-span-12  text-right">
+          <h2
+            style={{ lineHeight: "30px" }}
+            className=" text-5xl font-bold text-dark-main-text"
+          >
+            About
+            <span className=" text-4xl text-bright-yellow  uppercase">
+              <br />
+              the planners
+            </span>
+          </h2>
+        </div>
+        {/*info*/}
+        <div className="col-span-4 my-[54px]"></div>
+        {/*image*/}
+        <div className="col-span-8 my-[54px] relative">
+          <SVgClipPath />
+          <div
+            style={{ borderRadius: "80px" }}
+            className="w-[258px] h-[232px] bg-bright-yellow absolute right-0 bottom-0 flex flex-col justify-center items-center"
+          >
+            <p className=" leading-10 text-[32px] font-bold  mb-4 text-center">
+              Creamos experiencias
+            </p>
+            <SmileIcon />
+          </div>
+        </div>
+      </section>
     </MainLayout>
   );
 }

@@ -16,6 +16,7 @@ const config: Config = {
       screens: {
         xl: "1280px",
       },
+
       colors: {
         "dark-main-bg": "#000000",
         "dark-main-text": "#ffffff",
