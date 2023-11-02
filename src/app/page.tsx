@@ -4,8 +4,11 @@ import Right from "../../public/img/right.svg";
 import Lalo1 from "../../public/img/Lalo_1.svg";
 import MainLayout from "@/components/wrappers/MainLayout";
 import SVgClipPath from "@/components/SVgClipPath";
+import WorkCard from "@/components/WorkCard";
 import { SmileIcon, ArrowIcon } from "@/components/Icons";
 import Counter from "@/components/Counter";
+import ServiceCard from "@/components/ServiceCard";
+import TeamCard from "@/components/TeamCard";
 
 export default function Home() {
   return (
@@ -54,7 +57,7 @@ export default function Home() {
         </div>
       </div>
       {/*About us*/}
-      <section className="grid grid-cols-12">
+      <section className="grid grid-cols-12 border-b border-dark-main-text">
         <div className="col-span-12  text-right">
           <h2
             style={{ lineHeight: "30px" }}
@@ -114,6 +117,122 @@ export default function Home() {
           </div>
         </div>
       </section>
+      {/*works*/}
+      <section className="grid grid-cols-12 gap-x-2 py-[64px] border-b border-dark-main-text">
+        {/*title*/}
+        <div className="col-span-12 flex justify-between">
+          <h2 className=" text-5xl text-white font-bold">
+            Works <span className=" text-bright-yellow">//</span>{" "}
+            <span className=" text-2xl  font-normal">2023</span>
+          </h2>
+          <button className=" px-10 py-2 rounded-3xl border border-bright-yellow text-bright-yellow font-bold text-xl">
+            Ver todos
+          </button>
+        </div>
+        {/*Cards*/}
+        <WorkCard
+          imgLink="/img/card_1.jpg"
+          boda="Boda X&A"
+          lugar="Saltillo, Coah."
+          year="2023"
+        />
+        <WorkCard
+          imgLink="/img/card_2.jpg"
+          boda="Boda A&D"
+          lugar="Saltillo, Coah."
+          year="2023"
+        />
+        <WorkCard
+          imgLink="/img/card_3.png"
+          boda="Boda D&A"
+          lugar="Saltillo, Coah."
+          year="2023"
+        />
+      </section>
+      {/*services*/}
+      <section className="grid gap-x-[12px] grid-cols-12 my-[60px] border-b border-b-dark-main-text">
+        {/*button and title*/}
+        <div className=" col-span-12 flex justify-between items-center">
+          <button className=" px-10 py-2 rounded-3xl border border-bright-yellow text-bright-yellow font-bold text-xl">
+            Agendar una cita
+          </button>
+          <h2 className=" text-5xl text-white font-bold">
+            Services <span className=" text-bright-yellow">//</span>{" "}
+            <span className=" text-2xl  font-normal">
+              {" "}
+              Our areas of expertise
+            </span>
+          </h2>
+        </div>
+        {/*Service Cards*/}
+        <ServiceCard
+          emojiLink="rr"
+          serviceDesc="Consultoría de boda"
+          serviceNumber="01"
+        />
+        <ServiceCard
+          emojiLink="rr"
+          serviceDesc="Selección de proveedores"
+          serviceNumber="02"
+        />
+        <ServiceCard
+          emojiLink="rr"
+          serviceDesc="Diseño y decoración"
+          serviceNumber="03"
+        />
+        <ServiceCard
+          emojiLink="rr"
+          serviceDesc="Logística y gestión"
+          serviceNumber="04"
+        />
+      </section>
+      {/*Our team*/}
+      <section className="grid grid-cols-12 my-[60px] border-b border-b-dark-main-text">
+        {/*button and title*/}
+        <div className=" col-span-12 flex justify-between items-center">
+          <h2 className=" text-5xl text-white font-bold">Our Team</h2>
+          <button className=" px-10 py-2 rounded-3xl border border-bright-yellow text-bright-yellow font-bold text-xl">
+            Conócenos
+          </button>
+        </div>
+        {/* Team Card */}
+        <TeamCard
+          imgLink="/img/person_1.png"
+          name="Eduardo Urzúa"
+          job="Founder"
+        />
+        <TeamCard
+          imgLink="/img/person_2.png"
+          name="Valeria Rojas"
+          job="Gestión"
+        />
+        <TeamCard
+          imgLink="/img/person_3.png"
+          name="Mariana Rmz"
+          job="Servicio a cliente"
+        />
+        <TeamCard
+          imgLink="/img/person_4.jpg"
+          name="Samuel Velez"
+          job="Redes sociales"
+        />
+      </section>
+      {/*Reviews*/}
+      <section className="grid grid-cols-12 my-[60px] border-b border-b-dark-main-text">
+        {/*title*/}
+        <div className="col-span-12 flex justify-between">
+          <div className="w-[80px] h-[80px]  flex items-center justify-center border border-bright-yellow rounded-full ">
+            <ArrowIcon />
+          </div>
+          <h2 className=" text-5xl text-white font-bold">
+            Testimonios <span className=" text-bright-yellow">//</span>{" "}
+            <span className=" text-2xl  font-normal">
+              Customer´s kind words
+            </span>
+          </h2>
+        </div>
+      </section>
+      {/*Banner*/}
     </MainLayout>
   );
 }

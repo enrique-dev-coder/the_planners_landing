@@ -30,9 +30,17 @@ const config: Config = {
           },
           "50%": { transform: "rotate(0deg)" },
         },
+        newBounceHorizontal: {
+          "0%, 100%": {
+            transform: "translateY(-8%)",
+            "animation-timing-function": "cubic-bezier(0.8, 0, 1, 1)",
+          },
+          "50%": { transform: "rotate(1deg)" },
+        },
       },
       animation: {
         newBounceAnim: "newBounce 1.25s infinite",
+        newBounceHorizontal: "newBounceHorizontal 1.25s inifite",
       },
     },
   },
