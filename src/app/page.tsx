@@ -122,7 +122,7 @@ export default function Home() {
         {/*title*/}
         <div className="col-span-12 flex justify-between">
           <h2 className=" text-5xl text-white font-bold">
-            Works <span className=" text-bright-yellow">//</span>{" "}
+            Works <span className=" text-bright-yellow">{"//"}</span>{" "}
             <span className=" text-2xl  font-normal">2023</span>
           </h2>
           <button className=" px-10 py-2 rounded-3xl border border-bright-yellow text-bright-yellow font-bold text-xl">
@@ -157,7 +157,7 @@ export default function Home() {
             Agendar una cita
           </button>
           <h2 className=" text-5xl text-white font-bold">
-            Services <span className=" text-bright-yellow">//</span>{" "}
+            Services <span className=" text-bright-yellow">{"//"}</span>{" "}
             <span className=" text-2xl  font-normal">
               {" "}
               Our areas of expertise
@@ -225,7 +225,7 @@ export default function Home() {
             <ArrowIcon />
           </div>
           <h2 className=" text-5xl text-white font-bold">
-            Testimonios <span className=" text-bright-yellow">//</span>{" "}
+            Testimonios <span className=" text-bright-yellow">{"//"}</span>{" "}
             <span className=" text-2xl  font-normal">
               Customer´s kind words
             </span>
