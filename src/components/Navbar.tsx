@@ -4,27 +4,33 @@ import Image from "next/image";
 import LogoWhite from "../../public/img/logo_white.png";
 import LogoYellow from "../../public/img/logo_yellow.jpg";
 import { motion, useCycle } from "framer";
+import Link from "next/link";
 
 const navLinks = [
   {
     id: 1,
     title: "About us",
+    link: "#about-us",
   },
   {
     id: 2,
     title: "Servicios",
+    link: "#works",
   },
   {
     id: 3,
     title: "Referencias",
+    link: "#reviews",
   },
   {
     id: 4,
     title: "Contacto",
+    link: "#about-us",
   },
   {
     id: 5,
     title: "Trabajo",
+    link: "#about-us",
   },
 ];
 
@@ -32,6 +38,32 @@ const variants = {
   open: { opacity: 1, height: 160, width: 120 },
   closed: { opacity: 0, x: "100%" },
 };
+
+const ulVariants = {
+  open: {
+    transition: { staggerChildren: 0.07, delayChildren: 0.2 },
+  },
+  closed: {
+    transition: { staggerChildren: 0.05, staggerDirection: -1 },
+  },
+};
+const liVariants = {
+  open: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      y: { stiffness: 1000, velocity: -100 },
+    },
+  },
+  closed: {
+    y: 50,
+    opacity: 0,
+    transition: {
+      y: { stiffness: 1000 },
+    },
+  },
+};
+
 const Navbar = () => {
   const [scrollNum, setScrollNum] = useState<number>(0);
   const [showBar, setShowBar] = useState<boolean>(false);
@@ -59,12 +91,17 @@ const Navbar = () => {
           <ul className="flex">
             {navLinks.map((item) => {
               return (
-                <li
+                <Link
                   key={item.id}
-                  className=" cursor-pointer m-2 text-dark-main-text text-xl  hover:border-b-[1px] transition-all "
+                  href={item.link}
+                  scroll
+                  className="relative group"
                 >
-                  {item.title}
-                </li>
+                  <li className="cursor-pointer m-2 text-dark-main-text text-xl ">
+                    {item.title}
+                  </li>
+                  <div className=" transition-all  duration-500 w-0 group-hover:w-[80%]  h-[2px]  bg-dark-main-text absolute  bottom-0  translate-x-3 -translate-y-1" />
+                </Link>
               );
             })}
           </ul>
@@ -92,7 +129,7 @@ const Navbar = () => {
             />
           </motion.div>
 
-          <motion.ul
+          <motion.div
             className=" bg-bright-yellow mt-2  text-center rounded-3xl "
             initial={{ opacity: 0, height: 0, width: 0 }}
             variants={variants}
@@ -104,23 +141,34 @@ const Navbar = () => {
             }}
             animate={isOpen ? "open" : "closed"}
           >
-            {navLinks.map((item) => {
-              return (
-                <li className=" font-semibold" key={item.id}>
-                  {item.title}
-                </li>
-              );
-            })}
-            <button
-              className=" bg-dark-main-bg text-dark-main-text font-light rounded-full w-8 h-8"
-              onClick={() => {
-                toggleOpen();
-                setDisplayMenuButton(true);
-              }}
-            >
-              X
-            </button>
-          </motion.ul>
+            <motion.ul variants={ulVariants}>
+              {navLinks.map((item) => {
+                return (
+                  <motion.li
+                    variants={liVariants}
+                    whileHover={{ scale: 1.1 }}
+                    whileTap={{ scale: 0.95 }}
+                    className=" cursor-pointer font-semibold"
+                    key={item.id}
+                  >
+                    {item.title}
+                  </motion.li>
+                );
+              })}
+              <motion.button
+                variants={liVariants}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.95 }}
+                className=" bg-dark-main-bg text-dark-main-text font-light rounded-full  w-6 h-6"
+                onClick={() => {
+                  toggleOpen();
+                  setDisplayMenuButton(true);
+                }}
+              >
+                X
+              </motion.button>
+            </motion.ul>
+          </motion.div>
 
           {displayMenuButton && (
             <motion.div

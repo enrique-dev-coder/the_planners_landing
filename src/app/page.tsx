@@ -9,6 +9,7 @@ import { SmileIcon, ArrowIcon } from "@/components/Icons";
 import Counter from "@/components/Counter";
 import ServiceCard from "@/components/ServiceCard";
 import TeamCard from "@/components/TeamCard";
+import AnimatedLine from "@/components/AnimatedLine";
 
 export default function Home() {
   return (
@@ -37,7 +38,7 @@ export default function Home() {
           </div>
           <div className="flex gap-3 items-center">
             {/*line*/}
-            <div className=" h-[2px]  bg-dark-main-text w-[238px]" />
+            <AnimatedLine />
             <p className=" text-[32px] text-dark-main-text">
               Buscamos que tu sueño se vuelva realidad.
             </p>
@@ -57,7 +58,11 @@ export default function Home() {
         </div>
       </div>
       {/*About us*/}
-      <section className="grid grid-cols-12 border-b border-dark-main-text">
+
+      <section
+        id="about-us"
+        className="grid grid-cols-12 border-b border-dark-main-text"
+      >
         <div className="col-span-12  text-right">
           <h2
             style={{ lineHeight: "30px" }}
@@ -117,8 +122,12 @@ export default function Home() {
           </div>
         </div>
       </section>
+
       {/*works*/}
-      <section className="grid grid-cols-12 gap-x-2 py-[64px] border-b border-dark-main-text">
+      <section
+        id="works"
+        className="grid grid-cols-12 gap-x-2 py-[64px] border-b border-dark-main-text"
+      >
         {/*title*/}
         <div className="col-span-12 flex justify-between">
           <h2 className=" text-5xl text-white font-bold">
@@ -150,7 +159,10 @@ export default function Home() {
         />
       </section>
       {/*services*/}
-      <section className="grid gap-x-[12px] grid-cols-12 my-[60px] border-b border-b-dark-main-text">
+      <section
+        id="services"
+        className="grid gap-x-[12px] grid-cols-12 my-[60px] border-b border-b-dark-main-text"
+      >
         {/*button and title*/}
         <div className=" col-span-12 flex justify-between items-center">
           <button className=" px-10 py-2 rounded-3xl border border-bright-yellow text-bright-yellow font-bold text-xl">
@@ -218,7 +230,10 @@ export default function Home() {
         />
       </section>
       {/*Reviews*/}
-      <section className="grid grid-cols-12 my-[60px] border-b border-b-dark-main-text">
+      <section
+        id="reviews"
+        className="grid grid-cols-12 my-[60px] border-b border-b-dark-main-text"
+      >
         {/*title*/}
         <div className="col-span-12 flex justify-between">
           <div className="w-[80px] h-[80px]  flex items-center justify-center border border-bright-yellow rounded-full ">
