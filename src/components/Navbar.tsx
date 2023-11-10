@@ -97,10 +97,14 @@ const Navbar = () => {
                   scroll
                   className="relative group"
                 >
-                  <li className="cursor-pointer m-2 text-dark-main-text text-xl ">
+                  <li
+                    className="cursor-pointer m-2 text-dark-main-text text-xl transition-all duration-100 ease-in-out 
+                  hover:text-bright-yellow hover:underline hover:decoration-wavy  hover:decoration-bright-yellow hover:underline-offset-2 "
+                  >
                     {item.title}
                   </li>
-                  <div className=" transition-all  duration-500 w-0 group-hover:w-[80%]  h-[2px]  bg-dark-main-text absolute  bottom-0  translate-x-3 -translate-y-1" />
+                  {/*changed style*/}
+                  {/* <div className=" transition-all  duration-500 w-0 group-hover:w-[80%]  h-[2px]  bg-dark-main-text absolute  bottom-0  translate-x-3 -translate-y-1" /> */}
                 </Link>
               );
             })}
