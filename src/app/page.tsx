@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Carita from "../../public/img/carita.svg";
 import Right from "../../public/img/right.svg";
 import Lalo1 from "../../public/img/Lalo_1.svg";
 import MainLayout from "@/components/wrappers/MainLayout";
@@ -20,6 +19,7 @@ import Counter from "@/components/Counter";
 import TeamCard from "@/components/TeamCard";
 import AnimatedLine from "@/components/AnimatedLine";
 import ServiceCardV2 from "@/components/ServiceCardV2";
+import Carita from "@/components/Carita";
 
 export default function Home() {
   return (
@@ -28,12 +28,7 @@ export default function Home() {
       <section className="mt-[70px] grid grid-cols-12">
         {/*carita*/}
         <div className=" col-span-3 ">
-          <Image
-            src={Carita}
-            alt="Di hola a tu mejor dia"
-            width={175}
-            className="mx-auto  pt-10 "
-          />
+          <Carita />
         </div>
         {/*text intro*/}
         <div className=" col-span-9  flex  flex-col gap-[52px]">
