@@ -5,11 +5,21 @@ import Lalo1 from "../../public/img/Lalo_1.svg";
 import MainLayout from "@/components/wrappers/MainLayout";
 import SVgClipPath from "@/components/SVgClipPath";
 import WorkCard from "@/components/WorkCard";
-import { SmileIcon, ArrowIcon } from "@/components/Icons";
+import Button from "@/components/Button";
+import {
+  SmileIcon,
+  ArrowIcon,
+  Bodas,
+  Despedidas,
+  Navidad,
+  Comuniones,
+  SanValentin,
+  Cumpleaños,
+} from "@/components/Icons";
 import Counter from "@/components/Counter";
-import ServiceCard from "@/components/ServiceCard";
 import TeamCard from "@/components/TeamCard";
 import AnimatedLine from "@/components/AnimatedLine";
+import ServiceCardV2 from "@/components/ServiceCardV2";
 
 export default function Home() {
   return (
@@ -43,11 +53,7 @@ export default function Home() {
               Buscamos que tu sueño se vuelva realidad.
             </p>
           </div>
-          <div className="flex justify-end">
-            <button className=" text-bright-yellow border border-bright-yellow  px-11 py-2 rounded-3xl text-xl font-bold">
-              Agendar una cita
-            </button>
-          </div>
+          <Button name="Agendar una cita" />
         </div>
       </section>
       {/*divider*/}
@@ -134,9 +140,7 @@ export default function Home() {
             Works <span className=" text-bright-yellow">{"//"}</span>{" "}
             <span className=" text-2xl  font-normal">2023</span>
           </h2>
-          <button className=" px-10 py-2 rounded-3xl border border-bright-yellow text-bright-yellow font-bold text-xl">
-            Ver todos
-          </button>
+          <Button name="Ver todos" />
         </div>
         {/*Cards*/}
         <WorkCard
@@ -165,9 +169,7 @@ export default function Home() {
       >
         {/*button and title*/}
         <div className=" col-span-12 flex justify-between items-center">
-          <button className=" px-10 py-2 rounded-3xl border border-bright-yellow text-bright-yellow font-bold text-xl">
-            Agendar una cita
-          </button>
+          <Button name="Agendar una cita" />
           <h2 className=" text-5xl text-white font-bold">
             Services <span className=" text-bright-yellow">{"//"}</span>{" "}
             <span className=" text-2xl  font-normal">
@@ -177,25 +179,35 @@ export default function Home() {
           </h2>
         </div>
         {/*Service Cards*/}
-        <ServiceCard
-          emojiLink="rr"
-          serviceDesc="Consultoría de boda"
-          serviceNumber="01"
+        <ServiceCardV2
+          iconElement={<Bodas />}
+          numberService="01"
+          service="Bodas"
         />
-        <ServiceCard
-          emojiLink="rr"
-          serviceDesc="Selección de proveedores"
-          serviceNumber="02"
+        <ServiceCardV2
+          iconElement={<Despedidas />}
+          numberService="02"
+          service="Despedidas"
         />
-        <ServiceCard
-          emojiLink="rr"
-          serviceDesc="Diseño y decoración"
-          serviceNumber="03"
+        <ServiceCardV2
+          iconElement={<Navidad />}
+          numberService="03"
+          service="Navidad"
         />
-        <ServiceCard
-          emojiLink="rr"
-          serviceDesc="Logística y gestión"
-          serviceNumber="04"
+        <ServiceCardV2
+          iconElement={<Comuniones />}
+          numberService="04"
+          service="Comuniones"
+        />
+        <ServiceCardV2
+          iconElement={<SanValentin />}
+          numberService="05"
+          service="San Valentín"
+        />
+        <ServiceCardV2
+          iconElement={<Cumpleaños />}
+          numberService="06"
+          service="Cumpleaños"
         />
       </section>
       {/*Our team*/}
@@ -203,9 +215,7 @@ export default function Home() {
         {/*button and title*/}
         <div className=" col-span-12 flex justify-between items-center">
           <h2 className=" text-5xl text-white font-bold">Our Team</h2>
-          <button className=" px-10 py-2 rounded-3xl border border-bright-yellow text-bright-yellow font-bold text-xl">
-            Conócenos
-          </button>
+          <Button name="Conócenos" />
         </div>
         {/* Team Card */}
         <TeamCard

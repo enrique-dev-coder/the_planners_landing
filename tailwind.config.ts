@@ -21,6 +21,7 @@ const config: Config = {
         "dark-main-bg": "#000000",
         "dark-main-text": "#ffffff",
         "bright-yellow": "#FFDD00",
+        "soft-yellow": "#FFF199",
       },
       keyframes: {
         newBounce: {
